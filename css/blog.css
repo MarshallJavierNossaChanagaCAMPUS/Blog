@@ -1,4 +1,9 @@
 /* stylelint-disable selector-list-comma-newline-after */
+@font-face {
+  font-family: "passion";
+  src: url(/fonts/PassionOne-Regular.ttf);
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -18,7 +23,7 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "passion";
   font-size: 2.25rem;
 }
 
@@ -27,7 +32,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "passion";
 }
 
 .display-4 {
@@ -114,7 +119,34 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+                       /* myCSS */
+
 .imgStyle {
   background-size: cover;
   background-position: center;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #26a269 #ffffff00;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #26a269;
+    border-radius: 10px;
+  }
+
+/* body {
+  background-image: url(/img/fondobody.jpg);
+} */
