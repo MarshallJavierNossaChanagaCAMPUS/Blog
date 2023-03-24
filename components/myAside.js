@@ -123,7 +123,7 @@ export default {
     },
     cards(p1){
         return `
-        <div class="p-4 mb-3 bg-light rounded">
+        <div class="p-4 mb-3 bg-secondary rounded">
             <h4 class="fst-italic">${p1.name}</h4>
             <p class="mb-0">${p1.description}</p>
         </div>

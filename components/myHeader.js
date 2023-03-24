@@ -27,7 +27,7 @@ export default {
     },
     ],
     listTitle(){
-        document.querySelector("#title").insertAdjacentHTML("beforeend", `<a class="blog-header-logo text-dark" href="${this.title.href}">${this.title.name}</a>`)
+        document.querySelector("#title").insertAdjacentHTML("beforeend", `<a class="blog-header-logo" href="${this.title.href}">${this.title.name}</a>`)
     },
     listBoton(){
         document.querySelector("#botonNav")
@@ -35,7 +35,7 @@ export default {
     listarGames(){
         let plantilla = "";
         this.games.forEach((val, id) => {
-            plantilla += `<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`    
+            plantilla += `<a class="p-2" href="${val.href}">${val.name}</a>`    
         });
         document.querySelector("#games").insertAdjacentHTML("beforeend", plantilla);
     }

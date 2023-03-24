@@ -147,6 +147,11 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
   }
 
-/* body {
+body {
   background-image: url(/img/fondobody.jpg);
-} */
+} 
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
