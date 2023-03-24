@@ -1,7 +1,7 @@
 export default {
     blog: [
         {
-            part1: [
+            part: [
                 {
                     title: 'Minecraft',
                     content: [
@@ -14,35 +14,33 @@ export default {
             ]
         },
         {
-            part2: [
+            part: [
                 {
                     title: 'Survival mode',
                     content: [
                         {
                             date: '23/03/2023',
                             paragraph1: 'El modo supervivencia se basa en la vida real combinada con un poco de fantasía y se trata de la supervivencia al ataque de las múltiples criaturas que surgen en la oscuridad o de noche. El máximo aguante que tienen los personajes consta de 10 corazones (20 puntos de salud). En este modo las herramientas, armas y armadura se gastan con el uso.',
-                            paragraph2: ''
                         }
                     ]
                 }
             ]
         },
         {
-            part3: [
+            part: [
                 {
                     title: 'Creative mode',
                     content: [
                         {
                             date: '23/03/2023',
                             paragraph1: 'En el modo creativo se centra enteramente en el aspecto de la construcción libre. Los jugadores poseen un suministro ilimitado de todos los bloques y objetos del juego, que pueden colocar y destruir de forma instantánea. Además, no son atacados por los monstruos, son inmunes a todo daño (aunque sí pueden morir cayendo al vacío si están en Java Edition) y pueden volar libremente por el mapa. En este modo no se pueden romper bloques sosteniendo espada, para prevenir la destrucción del entorno cuando el jugador golpea o ataca.',
-
                         }
                     ]
                 }
             ]
         },
         {
-            part4: [
+            part: [
                 {
                     title: 'Hardcore mode',
                     content: [
@@ -61,7 +59,7 @@ export default {
             content: [
                 {
                     date: '23/03/2023',
-                    paragraph1: 'El modo multijugador en Minecraft permite que varios jugadores interactúen y se comuniquen entre sí en un solo mundo. Está disponible a través de multijugador directo de juego a juego, juego LAN, pantalla dividida local (solo consola) y servidores (alojados por jugadores y negocios). Los jugadores pueden ejecutar sus propios servidores, usar un proveedor de alojamiento o conectarse directamente al juego de otro jugador a través de Xbox Live. Los mundos de un solo jugador tienen soporte de red de área local, lo que permite a los jugadores unirse a un mundo en computadoras interconectadas localmente sin una configuración de servidor. Los servidores multijugador de Minecraft están guiados por operadores de servidores, que tienen acceso a los comandos del servidor, como configurar la hora del día y teletransportar a los jugadores. Los operadores también pueden establecer restricciones con respecto a qué nombres de usuario o direcciones IP pueden o no ingresar al servidor. Los servidores multijugador tienen una amplia gama de a29715ctividades, y algunos servidores tienen sus propias reglas y costumbres únicas. El servidor más grande y popular es Hypixel, que ha sido visitado por más de 14 millones de jugadores únicos. El combate jugador contra jugador (PvP) se puede habilitar para permitir la lucha entre jugadores. Muchos servidores tienen complementos personalizados que permiten acciones que normalmente no son posibles.',
+                    paragraph1: 'El modo multijugador en Minecraft permite que varios jugadores interactúen y se comuniquen entre sí en un solo mundo. Está disponible a través de multijugador directo de juego a juego, juego LAN, pantalla dividida local (solo consola) y servidores (alojados por jugadores y negocios). Los jugadores pueden ejecutar sus propios servidores, usar un proveedor de alojamiento o conectarse directamente al juego de otro jugador a través de Xbox Live. Los mundos de un solo jugador tienen soporte de red de área local, lo que permite a los jugadores unirse a un mundo en computadoras interconectadas localmente sin una configuración de servidor. Los servidores multijugador de Minecraft están guiados por operadores de servidores, que tienen acceso a los comandos del servidor, como configurar la hora del día y teletransportar a los jugadores. Los operadores también pueden establecer restricciones con respecto a qué nombres de usuario o direcciones IP pueden o no ingresar al servidor. Los servidores multijugador tienen una amplia gama de actividades, y algunos servidores tienen sus propias reglas y costumbres únicas. El servidor más grande y popular es Hypixel, que ha sido visitado por más de 14 millones de jugadores únicos. El combate jugador contra jugador (PvP) se puede habilitar para permitir la lucha entre jugadores. Muchos servidores tienen complementos personalizados que permiten acciones que normalmente no son posibles.',
                 }
             ],
             table: [
@@ -115,6 +113,18 @@ export default {
             ]
         }
     ],
-}
+    listSection1() {
+        let plantilla = "";
+        this.blog.forEach((val, id) => {
+            plantilla = `${val.part.map((val, id)=>`<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id)=> `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`
 
-/* Debo hacer el codigo que repita la misma funcion con los 4 primeros y hacer una funcion unia para el 5 y el 6 como el en el commit 4 */
+        document.querySelector("#articulo1").insertAdjacentHTML("beforeend", plantilla)
+        })
+    },
+    listSection2(){
+        document.querySelector("#articulo2").insertAdjacentHTML("beforeend", `${this.part5.map((val, id)=> `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id)=> `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`)
+    },
+    listSection3(){
+
+    }
+}

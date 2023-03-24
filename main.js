@@ -10,4 +10,5 @@ myBanner.showImage();
 myBanner.listTitleBanner();
 myCards.listarCards();
 myAside.showAside();
-myBlog.listBlog();
+myBlog.listSection1();
+myBlog.listSection2();
