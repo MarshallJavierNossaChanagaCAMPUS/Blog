@@ -146,12 +146,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #26a269;
     border-radius: 10px;
   }
+  /* 
+  body {
+    background-image: url(/img/fondobody.jpg);
+  } 
 
-body {
-  background-image: url(/img/fondobody.jpg);
-} 
-
-a {
-  text-decoration: none !important;
-  color: white !important;
-}
+  a {
+    text-decoration: none !important;
+    color: white !important;
+  }
+ */
