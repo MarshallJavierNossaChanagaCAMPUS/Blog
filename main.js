@@ -6,9 +6,15 @@ import myBlog from "./components/myBlog.js";
 
 myHeader.listTitle();
 myHeader.listarGames();
+
 myBanner.showImage();
 myBanner.listTitleBanner();
+
 myCards.listarCards();
+
 myAside.showAside();
+
 myBlog.listSection1();
 myBlog.listSection2();
+myBlog.listTable();
+myBlog.listSection3();

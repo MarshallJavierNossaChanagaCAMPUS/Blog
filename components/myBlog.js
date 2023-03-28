@@ -64,33 +64,19 @@ export default {
             ],
             table: [
                 {
-                    servers: [
-                        {
-                            server1: "Hypixel",
-                            server2: "Librecraft",
-                            server3: "Complex Gaming",
-                            server4: "MineLatino Network",
-                            server5: "Deluxe Zone",
-                        }
-                    ],
-                    players: [
-                        {
-                            players1: "29715 jugadores en este momento",
-                            players2: "6969 jugadores en este momento",
-                            players3: "2891 jugadores en este momento",
-                            players4: "2889 jugadores en este momento",
-                            players5: "2340 jugadores en este momento",
-                        }
-                    ],
-                    ip: [
-                        {
-                            ip1: "mc.hypixel.net",
-                            ip2: "mc.librecraft.com",
-                            ip3: "hub.mc-complex.com",
-                            ip4: "play.minelatino.com",
-                            ip5: "mc.deluxezone.net",
-                        }
-                    ],
+                    server: "Hypixel",
+                    players: "29715 jugadores en este momento",
+                    ip: "mc.hypixel.net",
+                },
+                {
+                    server: "Librecraft",
+                    players: "6969 jugadores en este momento",
+                    ip: "mc.librecraft.com",
+                },
+                {
+                    server: "Complex Gaming",
+                    players: "2891 jugadores en este momento",
+                    ip: "hub.mc-complex.com",
                 }
             ]
         }
@@ -98,17 +84,13 @@ export default {
     part6: [
         {
             title: 'Mencion honorifica a otros juegos juegos de minecraft',
-            content: [
+            date: '23/03/2023',
+            paragraph1: [
                 {
-                    date: '23/03/2023',
-                    paragraph1: [
-                        {
-                            game1: "Minecratf Story Mode",
-                            game2: "Minecraft Dungeons",
-                            game3: "Minecraft Earth",
-                            game4: "Minecraft Legends"
-                        }
-                    ]
+                    game1: "Minecratf Story Mode",
+                    game2: "Minecraft Dungeons",
+                    game3: "Minecraft Earth",
+                    game4: "Minecraft Legends"
                 }
             ]
         }
@@ -116,15 +98,42 @@ export default {
     listSection1() {
         let plantilla = "";
         this.blog.forEach((val, id) => {
-            plantilla = `${val.part.map((val, id)=>`<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id)=> `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`
+            plantilla = `${val.part.map((val, id) => `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id) => `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`
 
-        document.querySelector("#articulo1").insertAdjacentHTML("beforeend", plantilla)
+            document.querySelector("#articulo1").insertAdjacentHTML("beforeend", plantilla)
         })
     },
-    listSection2(){
-        document.querySelector("#articulo2").insertAdjacentHTML("beforeend", `${this.part5.map((val, id)=> `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id)=> `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`)
+    listSection2() {
+        document.querySelector("#articulo2").insertAdjacentHTML("afterbegin", `${this.part5.map((val, id) => `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id) => `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`)
     },
-    listSection3(){
-
+    listTable() {
+        let planTable = "";
+        this.part5.map((val, id) => {
+            `${val.table.forEach((val, id) => {
+                planTable += `<tr>
+                    <td>${val.server}</td>
+                    <td>${val.players}</td>
+                    <td>${val.ip}</td>
+                </tr> <br>`
+            })}`
+        });
+        document.querySelector("#arTable").insertAdjacentHTML("beforeend", `
+        <tr>
+            <th>Server</th>
+            <th>Jugadores</th>
+            <th>Ip</th>
+        </tr> <br>
+      `)
+        document.querySelector("#arTable").insertAdjacentHTML("beforeend", planTable)
+    },
+    listSection3() {
+        document.querySelector("#articulo3").insertAdjacentHTML("afterbegin", `${this.part6.map((val, id)=>{
+            `<h2 class="blog-post-title">${val.title}</h2> <pclass="blog-post-meta">${val.date}</p> ${val.paragraph1.map((val, id)=>`
+            <p>${val.game1}</p>
+            <p>${val.game2}</p>
+            <p>${val.game3}</p>
+            <p>${val.game4}</p>
+            `)}`
+        })}`)
     }
 }
