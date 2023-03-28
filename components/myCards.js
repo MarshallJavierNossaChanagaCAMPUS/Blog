@@ -16,7 +16,7 @@ export default {
             descripcion: "El jugador 'ElrichMC' ha conseguido el item de bedrock en modo supervivencia",
             boton: "Sigue leyendo...",
             imagen: `<img src="img/elrich.jpg" width="250" height="250" alt="">`,
-            href:"https://www.youtube.com/watch?v=VkrYzPefX3I"
+            href: "https://www.youtube.com/watch?v=VkrYzPefX3I"
         },
         {
             articulo: "Promesa",
@@ -25,12 +25,12 @@ export default {
             descripcion: "Este jugador està logrando cosas increibles...",
             boton: "Sigue leyendo...",
             imagen: `<img src="img/donpiola.png" width="250" height="250" alt="">`,
-            href:"https://www.twitch.tv/donpiola"
+            href: "https://www.twitch.tv/donpiola"
         }
     ],
-    listarCards(){
+    listarCards() {
         let plantilla = "";
-        this.cards.forEach((val, id) =>{
+        this.cards.forEach((val, id) => {
             plantilla += `<div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column bg-secondary position-static">

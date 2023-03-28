@@ -83,13 +83,13 @@ export default {
     ],
     part6: [
         {
-            title: 'Mencion honorifica a otros juegos juegos de minecraft',
+            title: 'Mencion honorifica a otros juegos de Mojang',
             date: '23/03/2023',
             paragraph1: [
                 {
                     game1: "Minecratf Story Mode",
                     game2: "Minecraft Dungeons",
-                    game3: "Minecraft Earth",
+                    game3: "Minecraft Earth (RIP)",
                     game4: "Minecraft Legends"
                 }
             ]
@@ -105,6 +105,7 @@ export default {
     },
     listSection2() {
         document.querySelector("#articulo2").insertAdjacentHTML("afterbegin", `${this.part5.map((val, id) => `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id) => `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`)
+
     },
     listTable() {
         let planTable = "";
@@ -127,13 +128,26 @@ export default {
         document.querySelector("#arTable").insertAdjacentHTML("beforeend", planTable)
     },
     listSection3() {
-        document.querySelector("#articulo3").insertAdjacentHTML("afterbegin", `${this.part6.map((val, id)=>{
-            `<h2 class="blog-post-title">${val.title}</h2> <pclass="blog-post-meta">${val.date}</p> ${val.paragraph1.map((val, id)=>`
+
+        let title = this.part6[0].title;
+        let date = this.part6[0].date;
+        let games = this.part6.map((val, id) => {
+            return `
+        ${val.paragraph1.map((val, id) => {
+                return `
             <p>${val.game1}</p>
             <p>${val.game2}</p>
             <p>${val.game3}</p>
             <p>${val.game4}</p>
-            `)}`
-        })}`)
+            `
+            })}
+        `});
+
+        let plantilla = `
+        <h2 class="blog-post-title">${title}</h2>
+        <pclass="blog-post-meta">${date}</p>
+        ${games}
+        `
+        document.querySelector("#articulo3").insertAdjacentHTML("afterbegin", plantilla)
     }
 }
