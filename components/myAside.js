@@ -6,7 +6,7 @@ export default {
         },
         {
             title: "Versions trailers",
-            link:[
+            link: [
                 {
                     name: "1.0",
                     href: ""
@@ -87,7 +87,7 @@ export default {
         },
         {
             title: "Social medias",
-            link:[
+            link: [
                 {
                     name: "Twitch",
                     href: "",
@@ -111,32 +111,20 @@ export default {
             ]
         }
     ],
-    showAside(){
-        const data = this.nav.map((val, id) =>{
-            return(
-                (val.link)
-                ?this.list(val)
-                :this.cards(val)
-            );
-        });
-        document.querySelector("#nav").insertAdjacentHTML("beforeend", data.join(""))
-    },
-    cards(p1){
-        return `
-        <div class="p-4 mb-3 bg-secondary rounded">
-            <h4 class="fst-italic">${p1.name}</h4>
-            <p class="mb-0">${p1.description}</p>
-        </div>
-        `
-    },
-    list(p1){
-        return `
-        <div class="p-4">
-        <h4 class="fst-italic">${p1.title}</h4>
-        <ol class="list-unstyled mb-0">
-          ${p1.link.map((val, id) => `<li><a href="${val.href}">${val.name}</a></li>` ).join("")}
-        </ol>
-      </div>
-        `
+    workerAside(){
+        const ws = new Worker("storage/wsMyAside.js");
+
+        let id = [];
+
+        ws.postMessage({module: "showAside", data: this.nav})
+        id = ["#nav"];
+
+        ws.addEventListener("message", (e)=>{
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+
+            document.querySelector(id).append(...doc.body.children);
+
+            ws.terminate();
+        })
     }
 }

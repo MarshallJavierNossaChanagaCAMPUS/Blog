@@ -10,9 +10,9 @@ myHeader.worker();
 myBanner.showImage();
 myBanner.workerBanner();
 
-myCards.listarCards();
+myCards.workerCards();
 
-myAside.showAside();
+myAside.workerAside();
 
 myBlog.listSection1();
 myBlog.listSection2();
