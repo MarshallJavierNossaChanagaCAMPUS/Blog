@@ -8,7 +8,7 @@ import myFooter from "./components/myFooter.js";
 myHeader.worker();
 
 myBanner.showImage();
-myBanner.listTitleBanner();
+myBanner.workerBanner();
 
 myCards.listarCards();
 
