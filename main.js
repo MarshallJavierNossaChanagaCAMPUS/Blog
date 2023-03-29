@@ -19,4 +19,4 @@ myBlog.listSection2();
 myBlog.listTable();
 myBlog.listSection3();
 
-myFooter.listFooter();
+myFooter.workerFooter();
