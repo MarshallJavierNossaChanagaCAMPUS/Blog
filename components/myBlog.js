@@ -1,8 +1,7 @@
 export default {
     blog: [
         {
-            part: [
-                {
+            part: {
                     title: 'Minecraft',
                     content: [
                         {
@@ -11,11 +10,9 @@ export default {
                         }
                     ]
                 }
-            ]
         },
         {
-            part: [
-                {
+            part: {
                     title: 'Survival mode',
                     content: [
                         {
@@ -24,11 +21,9 @@ export default {
                         }
                     ]
                 }
-            ]
         },
         {
-            part: [
-                {
+            part: {
                     title: 'Creative mode',
                     content: [
                         {
@@ -37,11 +32,9 @@ export default {
                         }
                     ]
                 }
-            ]
         },
         {
-            part: [
-                {
+            part: {
                     title: 'Hardcore mode',
                     content: [
                         {
@@ -50,11 +43,9 @@ export default {
                         }
                     ],
                 }
-            ]
         },
     ],
-    part5: [
-        {
+    part5: {
             title: 'Online mode',
             content: [
                 {
@@ -79,10 +70,8 @@ export default {
                     ip: "hub.mc-complex.com",
                 }
             ]
-        }
-    ],
-    part6: [
-        {
+        },
+    part6: {
             title: 'Mencion honorifica a otros juegos de Mojang',
             date: '23/03/2023',
             paragraph1: [
@@ -93,8 +82,7 @@ export default {
                     game4: "Minecraft Legends"
                 }
             ]
-        }
-    ],
+        },
     listSection1() {
         let plantilla = "";
         this.blog.forEach((val, id) => {
