@@ -66,68 +66,20 @@ export default {
             game4: "Minecraft Legends"
         }
     },
-    /*  */
-    listSection2() {
-        document.querySelector("#articulo2").insertAdjacentHTML("afterbegin", `${this.part5.map((val, id) => `<h2 class="blog-post-title">${val.title}</h2> ${val.content.map((val, id) => `<pclass="blog-post-meta">${val.date}</p><p>${val.paragraph1}</p>`)}`)}`)
-
-    },
-    listTable() {
-        let planTable = "";
-        this.part5.map((val, id) => {
-            `${val.table.forEach((val, id) => {
-                planTable += `<tr>
-                    <td>${val.server}</td>
-                    <td>${val.players}</td>
-                    <td>${val.ip}</td>
-                </tr> <br>`
-            })}`
-        });
-        document.querySelector("#arTable").insertAdjacentHTML("beforeend", `
-        <tr>
-            <th>Server</th>
-            <th>Jugadores</th>
-            <th>Ip</th>
-        </tr> <br>
-      `)
-        document.querySelector("#arTable").insertAdjacentHTML("beforeend", planTable)
-    },
-    listSection3() {
-
-        let title = this.part6[0].title;
-        let date = this.part6[0].date;
-        let games = this.part6.map((val, id) => {
-            return `
-        ${val.paragraph1.map((val, id) => {
-                return `
-            <p>${val.game1}</p>
-            <p>${val.game2}</p>
-            <p>${val.game3}</p>
-            <p>${val.game4}</p>
-            `
-            })}
-        `});
-
-        let plantilla = `
-        <h2 class="blog-post-title">${title}</h2>
-        <pclass="blog-post-meta">${date}</p>
-        ${games}
-        `
-        document.querySelector("#articulo3").insertAdjacentHTML("afterbegin", plantilla)
-    },
     workerBlog() {
         const ws = new Worker("storage/wsMyBlog.js")
 
         let id = [];
         let count = 0
 
-        ws.postMessage({ module: "listSection1", data: this.blog })
+        ws.postMessage({ module: "listSection1", data: this.blog });
 
-        /*  ws.postMessage({module: "listSection2", data: this.part5})
+          ws.postMessage({module: "listSection2", data: this.part5});
  
-         ws.postMessage({module: "lisTable", data: this.part5})
+         ws.postMessage({module: "listTable", data: this.part5.table})
  
-         ws.postMessage({module: "listSection3", data: this.part6}) */
-        id = ["#articulo1"/* , "#articulo2", "#arTable", "#articulo3" */]
+         ws.postMessage({module: "listSection3", data: this.part6})  
+        id = ["#articulo1" , "#articulo2", "#arTable", "#articulo3" ]
 
         ws.addEventListener("message", (e) => {
             let doc = new DOMParser().parseFromString(e.data, "text/html");

@@ -15,8 +15,5 @@ myCards.workerCards();
 myAside.workerAside();
 
 myBlog.workerBlog();
-/* myBlog.listSection2();
-myBlog.listTable();
-myBlog.listSection3(); */
 
 myFooter.workerFooter();
