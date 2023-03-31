@@ -2,7 +2,7 @@ let wsMyBlog = {
     listSection1(p1) {
         let plantilla = "";
         p1.forEach((val, id) => {
-            plantilla =  `<h2 class="blog-post-title">${val.part.title}</h2> <pclass="blog-post-meta">${val.part.content.date}</p><p>${val.part.content.paragraph1}</p>`
+            plantilla +=  ` <h2 class="blog-post-title">${val.title}</h2> <pclass="blog-post-meta">${val.content.date}</p><p>${val.content.paragraph1}</p>`
         });
         return plantilla
     },
