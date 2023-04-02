@@ -1,5 +1,7 @@
+import config from "../storage/config.js";
+
 export default {
-    nav: [
+    /* nav: [
         {
             name: "About",
             description: "Minecraft es un videojuego de construcción de tipo mundo abierto o sandbox creado originalmente por Notch, y posteriormente desarrollado por Mojang Studios (actualmente parte de Microsoft). Fue lanzado el 17 de mayo de 2009, y después de numerosos cambios, su primera versión estable 1.0 fue publicada el 18 de noviembre de 2011. "
@@ -110,8 +112,12 @@ export default {
                 }
             ]
         }
-    ],
+    ], */
     workerAside(){
+
+        config.dataMyAside();
+        Object.assign(this, JSON.parse(localStorage.getItem("myAside")))
+
         const ws = new Worker("storage/wsMyAside.js");
 
         let id = [];

@@ -1,5 +1,7 @@
+import config from "../storage/config.js";
+
 export default {
-    title: {
+    /*title: {
         name: "Mojang",
         href: "index.html"
     },
@@ -24,8 +26,12 @@ export default {
         name: "Minecraft Legends",
         href: "#"
     },
-    ],
+    ],*/
     worker(){
+        //llamamos al config los datos de my header
+        config.dataMyHeader();
+        //parseamos el json y asignamos la data del config
+        Object.assign(this, JSON.parse(localStorage.getItem("myHeader")))
         //Creamos el worker
         const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
         //enviamos un mensaje al worker
