@@ -191,6 +191,18 @@ export default {
             ],
         }))
     },
+
+    // Espacio reservado para dataMyBlog
+
+    dataMyFooter(){
+        localStorage.setItem("myFooter", JSON.stringify({
+            footer: {
+                creditos: "Blog para minecraft hecho por: Don Piola ",
+                twitter: "@piola_don",
+                link: "https://twitter.com/piola_don"
+            },
+        }))
+    }
 }
 
 //importamos todos los objetos desde aqui hacia el local storage
