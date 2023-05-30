@@ -1,18 +1,14 @@
 import config from "../storage/config.js";
 
 export default {
-    /*banner:
-        {
-            titleBanner: "Te damos la bienvenida al sitio no oficial de Minecraft",
-            descripcion: "Con sus nuevos juegos, nuevas actualizaciones y nuevas formas de jugar, ¡únete a una de las comunidades de juegos más grandes y empieza a crear hoy mismo!",
-            image: "../img/fondobanner.jpg",
-        },*/
+    //Funcion que inserta la imagen del banner
     showImage() {
+        //Llamo la data del archivo config
         config.dataMyBanner();
-
-        Object.assign(this, JSON.parse(localStorage.getItem("myBanner")))
-
-        document.querySelector(".imgStyle").style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${this.banner.image})`
+        //Traigo la imagen del local storage
+        Object.assign(this, JSON.parse(localStorage.getItem("myBanner")));
+        //Esta funcion oscurece la imagen
+        document.querySelector(".imgStyle").style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${this.banner.image})`;
     },
     workerBanner() {
 
@@ -33,13 +29,6 @@ export default {
 
             document.querySelector(id).append(...doc.body.children);
 
-            /* if (e.data.type == "insertImage") {
-                const img = document.createElement("img")
-                img.src = e.data.src;
-                const targetElement = document.querySelector(id);
-                targetElement.appendChild(img);
-            } */
-        
             ws.terminate()
         })
         

@@ -35,7 +35,7 @@ export default {
             banner:
                 {
                 titleBanner: "Te damos la bienvenida al sitio no oficial de Minecraft",
-                descripcion: "Con sus nuevos juegos, nuevas actualizaciones y nuevas formas de jugar, ¡únete a una de las comunidades de juegos más grandes y empieza a crear hoy mismo!",
+                descripcion: "Este es un blog personal en donde trato de expresar todo lo que es minecraft (para mi), echale un vistazo a la pagina oficial de mojang :D!",
                 image: "../img/fondobanner.jpg",
             },
         }))

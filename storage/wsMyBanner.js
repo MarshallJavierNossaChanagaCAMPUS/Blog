@@ -2,7 +2,7 @@ let wsMyBanner = {
     listTitleBanner(p1) {
         return `<h1 class="display-4 fst-italic">${p1.titleBanner}</h1>
         <p class="lead my-3"> ${p1.descripcion}</p>
-        <button type="button" class="btn btn-success">OBTENER MINECRAFT</button>
+        <a type="button" class="btn btn-success" href="https://www.minecraft.net/es-es">OBTENER MINECRAFT</a>
         `
     },
 }
